@@ -6,8 +6,14 @@ public class Documento {
     private String cnh;
 
     public Documento(String cpf) {
-        validaCPF(cpf);
-        // this.setCpf(cpf); // atributo obrigatório
+        validaCpf(cpf);
+        if (validaCpf(cpf)) {
+            System.out.println("CPF VÁLIDO");
+            setCpf(cpf);
+        } else {
+            System.out.println("CPF INVÁLIDO");
+            System.exit(-1);
+        }
 
     }
 
@@ -46,26 +52,22 @@ public class Documento {
 
         int resto = soma % 11;
         if ((resto < 2) && (digVerificador != 0)) {
-            System.out.println("CPF INVÁLIDO");
             return false;
 
         } else if ((resto >= 2) && (digVerificador != (11 - resto))) {
-            System.out.println("CPF INVÁLIDO");
             return false;
         }
-        System.out.println("CPF VÁLIDO");
         return true;
     }
 
-    private boolean validaCPF(String cpf) {
-        cpf = cpf.replace(".", ""); // substitui os pontos por vazio
-        cpf = cpf.replace("-", ""); // substitui os traços por vazio
+    private boolean validaCpf(String cpf) {
+        cpf = cpf.replace(".", "").replace("-", ""); // substitui os pontos por vazio
 
         return (calculaCpf(cpf, 9) && calculaCpf(cpf, 10));
     }
 
     public static void main(String[] args) {
-        Documento doc = new Documento("503.784.278-93");
+        Documento doc = new Documento("111.444.777-93");
     }
 
 }
