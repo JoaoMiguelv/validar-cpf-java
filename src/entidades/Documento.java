@@ -66,6 +66,11 @@ public class Documento {
         return (calculaCpf(cpf, 9) && calculaCpf(cpf, 10));
     }
 
+    @Override
+    public String toString() {
+        return "\nDocumento [cnh=" + cnh + ", cpf=" + cpf + ", rg=" + rg + "]";
+    }
+
     public static void main(String[] args) {
         Documento doc = new Documento("111.444.777-93");
     }
