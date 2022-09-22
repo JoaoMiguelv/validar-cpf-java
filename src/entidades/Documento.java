@@ -68,7 +68,7 @@ public class Documento {
 
     @Override
     public String toString() {
-        return "\nDocumento [cnh=" + cnh + ", cpf=" + cpf + ", rg=" + rg + "]";
+        return "\"documento\": {\"cnh\": \"" + cnh + "\", \"cpf\": \"" + cpf + "\", \"rg\": \"" + rg + "\"}";
     }
 
     public static void main(String[] args) {

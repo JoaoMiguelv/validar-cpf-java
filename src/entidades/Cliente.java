@@ -49,13 +49,18 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
-    public String toString(){
-        return "Nome" + 
-        getNome() + 
-        "Documento" +
-        getDocumento() + 
-        "Endereço" + 
-        getEndereco() + 
-        "Contato" + getContato();
+    public String toString() {
+
+        String newObject = "{ \"nome\": \"" + getNome() + "\", " + getDocumento().toString() + ", " + getEndereco().toString() + ", "
+        + getContato().toString() + ", \"dataNascimento\": \"" + getDataNascimento() + "\" }";
+
+
+        return newObject;
+        // getNome() +
+        // +
+        // getDocumento() +
+        // +
+        // getEndereco() +
+        // + getContato()}
     }
 }

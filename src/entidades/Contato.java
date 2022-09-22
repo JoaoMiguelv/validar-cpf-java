@@ -35,7 +35,8 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Contato [celular=" + celular + ", email=" + email + ", fixo=" + fixo + "]";
+        return "\"contato\": { \"email\": \"" + getEmail() + "\", \"fixo\": \"" + getFixo() + "\", \"celular\": \"" + getCelular()
+                + "\" }";
     }
 
 }
