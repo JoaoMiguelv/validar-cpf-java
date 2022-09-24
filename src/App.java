@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import entidades.Cliente;
 import entidades.Endereco;
 import entidades.Contato;
+import entidades.Funcionario;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -22,6 +23,8 @@ public class App {
         obj1.setContato(new Contato("11 99999-9999"));
         obj1.getContato().setEmail("joaomiguelmv_04@hotmail.com");
         obj1.getContato().setFixo("11 3722-4596");
+
+        obj1.setFuncionario(new Funcionario(20000.00, "123456789"));
 
         obj1.setNome("João Miguel");
         obj1.setDataNascimento(LocalDate.of(2001, 02, 04));

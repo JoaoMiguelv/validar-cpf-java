@@ -8,6 +8,7 @@ public class Cliente {
     private Endereco endereco;
     private Contato contato;
     private LocalDate dataNascimento;
+    private Funcionario funcionario;
 
     public Cliente(String cpf) {
         this.documento = new Documento(cpf);
@@ -49,18 +50,20 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
     }
 
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
     public String toString() {
 
-        String newObject = "{ \"nome\": \"" + getNome() + "\", " + getDocumento().toString() + ", " + getEndereco().toString() + ", "
-        + getContato().toString() + ", \"dataNascimento\": \"" + getDataNascimento() + "\" }";
-
-
+        String newObject = "{ \"cliente\": { \"nome\": \"" + getNome() + "\", \"dataNascimento\": \""
+                + getDataNascimento() + "\", " + getDocumento().toString() + ", "
+                + getEndereco().toString() + ", "
+                + getContato().toString() + ", " + getFuncionario().toString() + " } }";
         return newObject;
-        // getNome() +
-        // +
-        // getDocumento() +
-        // +
-        // getEndereco() +
-        // + getContato()}
     }
 }
